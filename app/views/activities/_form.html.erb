@@ -1,0 +1,13 @@
+<%= form_for @activity do |f| %>
+
+  <%= f.label :name, "Activity Name" %>
+  <%= f.text_field :name %>
+  <br></br>
+
+  <%= f.label :time_required %>
+  <%= f.number_field :time_required, min: 0 %> (in hours)
+  <br></br>
+
+  <%= f.submit%>
+
+<% end %>

@@ -1,0 +1,28 @@
+<h1>Test Prep Tracker</h1>
+
+<% if !logged_in? %>
+<%= link_to 'Signup', signup_path %>     |     
+<%= link_to 'Login', login_path %>
+
+<% else %>
+<wrapper>
+  <div class="box">
+  <h3><%=link_to 'Tests', tests_path %></h3>
+  <p class="box-text">Tests for which you're preparing.</p>
+      </div>
+  </div>
+
+  <div class="box">
+  <h3><%=link_to 'Prep Activities', activities_path %></h3>
+  <p class="box-text">Tools you're using to prep for your tests.</p>
+      </div>
+  </div>
+
+  <div class="box">
+  <h3><%=link_to 'Training Log', trainings_path %></h3>
+  <p class="box-text">Record and track your test prep progress.</p>
+      </div>
+  </div>
+    </wrapper>
+
+<% end %>
