@@ -1,0 +1,11 @@
+<%= form_for @training do |f| %>
+
+  <%= f.label :date, "Date of Training" %>
+  <%= f.date_field :date %>
+  <br></br>
+  <%= f.label :notes %>
+  <%= f.text_area :notes %>
+<br></br>
+  <%= f.submit%>
+
+<% end %>
