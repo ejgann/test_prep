@@ -14,7 +14,7 @@
     <% @trainings.each do |training| %>
 
     <tr>
-    <td><%= training.date  %></td>
+    <td><%= training.date.strftime("%b %e, %Y")  %></td>
     <td><%= training.notes  %></td>
     <td><%= link_to 'Show', training_path(training) %></td>
     <td><%= link_to 'Edit', edit_training_path(training) %></td>
