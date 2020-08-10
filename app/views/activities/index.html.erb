@@ -6,7 +6,7 @@
     <thead>
         <tr>
         <th>Name</th>
-        <th>Time Required (in hours)</th>
+        <th>Time Required</th>
         <th colspan="3"></th>
         </tr>
     </thead>
@@ -15,7 +15,7 @@
 
     <tr>
     <td><%= activity.name  %></td>
-    <td><%= activity.time_required %></td>
+    <td><%= activity.time_required %> hours</td>
     <td><%= link_to 'Show', activity_path(activity) %></td>
     <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
     <td><%= link_to 'Delete', activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' } %></td>
