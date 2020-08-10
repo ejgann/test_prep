@@ -3,8 +3,10 @@
 <% if !logged_in? %>
 <%= link_to 'Signup', signup_path %>     |     
 <%= link_to 'Login', login_path %>
+<%= link_to "Login with Google", "/auth/google_oauth2" %>
 
 <% else %>
+<h1>Welcome <%= current_user.username%></h1>
 <wrapper>
   <div class="box">
   <h3><%=link_to 'Tests', tests_path %></h3>
@@ -26,3 +28,4 @@
     </wrapper>
 
 <% end %>
+

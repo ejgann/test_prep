@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/auth/:provider/callback' => 'sessions#omniauth'
+  # if want multiple omniauth providers, leave as :provider. Otherwise, specify google, etc
+  
   root 'sessions#index'
 
   get '/signup', to: 'users#new'
