@@ -1,5 +1,22 @@
-<h1>Record a Test Training Session</h1>
+<h1>Record a Training Session</h1>
 
 <%= render partial: "layouts/errors", locals: { object: @training } %>
 
-<%= render 'form' %>
+<%= form_for [@test,@training] do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+    
+    <br></br>
+    
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+
+    <br></br>
+
+    <%= f.label :test_id %>
+    <%= f.collection_select :test_id, current_user.tests, :id, :name %>
+
+    <br></br>
+
+    <%= f.submit %>
+    <% end %>

@@ -1,3 +1,6 @@
+ <h3>Test for which you're preparing:</h3><%= @training.test.name  %>
+  <%= f.text_field :test_id, @training.tests.name %>
+
 <%= form_for @training do |f| %>
 
   <%= f.label :date, "Date of Training" %>
@@ -6,6 +9,7 @@
   <%= f.label :notes %>
   <%= f.text_area :notes %>
 <br></br>
+
   <%= f.submit%>
 
 <% end %>

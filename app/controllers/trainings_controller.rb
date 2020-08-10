@@ -16,14 +16,24 @@ class TrainingsController < ApplicationController
         # Otherwise, a new training created per usual
         else
         @training = Training.new
-        # @training.build_activity
+        @training.build_activity
         # belongs_to - nested form
         end 
     end
 
     def create
-        # if the training is nested/associated with an activity, then the training instance is set to be built with the parent activity
+        # if it's nested AND the associated activity is in the database, then the training instance is built with the parent activity
+        if params[:activity_id] && Activity.find_by_id(params[:activity_id])
+            @training = @activity.trainings.build(training_params)
+        else
+            @training = Training.new(training_params)
+        end
         # otherwise, create a training instance as usual
+        if @training.save
+            redirect_to training_path(@training)
+        else
+            render :new
+        end
     end
 
     def show
