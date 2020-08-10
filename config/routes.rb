@@ -10,14 +10,11 @@ Rails.application.routes.draw do
   
   resources :trainings
   resources :tests do
-    resources :trainings, shallow: :true
+    resources :trainings
     end
   resources :activities do
-    resources :trainings, shallow: true
+    resources :trainings
     end
-  resources :users do
-    resources :tests, shallow: true
-    resources :activities, shallow: true
-    end
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

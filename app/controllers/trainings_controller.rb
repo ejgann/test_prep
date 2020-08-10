@@ -3,29 +3,31 @@ class TrainingsController < ApplicationController
          #    if the training is nested/associated with an activity, then trainings set equal to activity.trainings
         if params[:activity_id] && Activity.find_by_id(params[:activity_id])
             @trainings = @activity.trainings
+        elsif params[:test_id] && @test = Test.find_by_id(params[:test_id])
+            @trainings = @test.trainings
         else
             @trainings = Training.all
         end
-    
     end
 
     def new
         # if it's nested under an activity AND the activity exists in the database, then training instance will be built in conjunction with that parent activity as part of has_many relationship
-        if params[:actvity_id] && Activity.find_by_id(params[:activity_id])
-            @training = @activity.trainings.build
+        if params[:actvity_id] && @activity = Activity.find_by_id(params[:activity_id])
+            @training = @activity.trainings.build(training_params)
         # Otherwise, a new training created per usual
         else
         @training = Training.new
         @training.build_activity
+        @activity = @training.build_activity
         # belongs_to - nested form
         end 
     end
 
     def create
         # if it's nested AND the associated activity is in the database, then the training instance is built with the parent activity
-        if params[:activity_id] && Activity.find_by_id(params[:activity_id])
+        if params[:activity_id] && @activity = Activity.find_by_id(params[:activity_id])
             @training = @activity.trainings.build(training_params)
-        else
+        else 
             @training = Training.new(training_params)
         end
         # otherwise, create a training instance as usual
@@ -62,7 +64,7 @@ class TrainingsController < ApplicationController
     private
 
     def training_params
-        params.require(:training).permit(:date, :notes)
+        params.require(:training).permit(:date, :notes, :user_id, :test_id, :activity_id)
     end
 
 end
