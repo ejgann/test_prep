@@ -6,26 +6,32 @@
 <%= link_to "Login with Google", "/auth/google_oauth2" %>
 
 <% else %>
-<h1>Welcome <%= current_user.username%></h1>
-<wrapper>
-  <div class="box">
-  <h3><%=link_to 'Tests', tests_path %></h3>
-  <p class="box-text">Tests for which you're preparing.</p>
-      </div>
-  </div>
 
-  <div class="box">
-  <h3><%=link_to 'Prep Activities', activities_path %></h3>
-  <p class="box-text">Tools you're using to prep for your tests.</p>
-      </div>
-  </div>
+    <div class="card-deck">
+        <div class="card bg-light text-dark">
+            <div class="card-body">
+            <img class="card-img-top"<%= image_tag "pencils.jpg", class: "fit-image" %>
+            <h4 class="card-title"><%=link_to 'Tests', tests_path%></h4>
+            <p class="card-text">A list of tests for which you're preparing</p>
+            </div>
+        </div>
 
-  <div class="box">
-  <h3><%=link_to 'Training Log', trainings_path %></h3>
-  <p class="box-text">Record and track your test prep progress.</p>
-      </div>
-  </div>
-    </wrapper>
+        <div class="card bg-light text-dark">
+            <div class="card-body">
+            <img class="card-img-top"<%= image_tag "books.jpg", class: "fit-image" %>
+            <h4 class="card-title"><%=link_to 'Test Prep Activities', activities_path%></h4>
+            <p class="card-text">Activities to help you prepare for your tests</p>
+            </div>
+        </div>
+
+        <div class="card bg-light text-dark">
+            <div class="card-body">
+            <img class="card-img-top"<%= image_tag "training.jpg", class: "fit-image" %>
+            <h4 class="card-title"><%=link_to 'Trainings', trainings_path%></h4>
+            <p class="card-text">Track your training and performance</p>
+            </div>
+        </div>
+    </div>
 
 <% end %>
 
