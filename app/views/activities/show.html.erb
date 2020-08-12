@@ -1,3 +1,6 @@
 <h1><%= @activity.name %></h1>
-
-<h3>Time Required: </h3><%= @activity.time_required %> (in hours)
+<br></br>
+<h4>Time Required: </h4><%= @activity.time_required %> (in hours)
+<h4>Number of Trainings: </h4><%=@activity.trainings.count %>
+<br></br>
+<%= link_to 'All Activities', activities_path %>
