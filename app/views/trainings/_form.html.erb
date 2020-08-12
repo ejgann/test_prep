@@ -1,15 +1,28 @@
- <h3>Test for which you're preparing:</h3><%= @training.test.name  %>
-  <%= f.text_field :test_id, @training.tests.name %>
+ 
 
-<%= form_for @training do |f| %>
 
-  <%= f.label :date, "Date of Training" %>
-  <%= f.date_field :date %>
-  <br></br>
-  <%= f.label :notes %>
-  <%= f.text_area :notes %>
-<br></br>
+<%= form_for ([@activity, @training]) do |f| %>
+    <%= f.hidden_field :activity_id %>
 
-  <%= f.submit%>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+    
+    <br></br>
+    
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
 
+    <br></br>
+
+    <%= f.label :activity_id %>
+    <%= f.collection_select :activity_id, current_user.activities, :id, :name %>
+
+    <br></br>
+
+    <%= f.label :test_id %>
+    <%= f.collection_select :test_id, current_user.tests, :id, :name %>
+
+    <br></br>
+
+    <%= f.submit %>
 <% end %>
