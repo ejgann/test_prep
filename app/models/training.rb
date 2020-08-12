@@ -3,4 +3,5 @@ class Training < ApplicationRecord
   belongs_to :activity
   validates_associated :activity
   accepts_nested_attributes_for :test, :activity
+  validates :date, :notes, presence: true
 end
