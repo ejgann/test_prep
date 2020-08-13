@@ -10,5 +10,7 @@ class Training < ApplicationRecord
     self.date.strftime("%b %e, %Y") if self.date
     #self.date.try(:strftime, "%b %e, %Y")
   end
-  
+
+  scope :by_test, -> (test_id) {where("test_id = ?", test_id)}
+
 end
