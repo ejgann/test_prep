@@ -3,7 +3,7 @@ class Training < ApplicationRecord
   belongs_to :activity
   validates_associated :activity
   accepts_nested_attributes_for :test, :activity
-  validates :date, :notes, :rating, presence: true
+  validates :date, :notes, presence: true
   validates :rating, numericality: { greater_than: 0, less_than: 6 }
 
   def datetime
