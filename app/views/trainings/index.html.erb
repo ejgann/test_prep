@@ -15,16 +15,16 @@
 
         <% @trainings.each do |training| %>
         <tbody>
-        <tr>
-        <td><%= training.date.strftime("%b %e, %Y")  %></td>
-        <td><%= training.rating  %></td>
-        <td><%= training.notes  %></td>
-        <td><%= training.activity.name  %></td>
-        <td><%= training.test.name  %></td>
-        <td><%= link_to 'Show', training_path(training) %></td>
-        <td><%= link_to 'Edit', edit_training_path(training) %></td>
-        <td><%= link_to 'Delete', training_path(training), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+            <tr>
+            <td><%= training.date.strftime("%b %e, %Y")  %></td>
+            <td><%= training.rating  %></td>
+            <td><%= training.notes  %></td>
+            <td><%= training.activity.name  %></td>
+            <td><%= training.test.name  %></td>
+            <td><%= link_to 'Show', training_path(training) %></td>
+            <td><%= link_to 'Edit', edit_training_path(training) %></td>
+            <td><%= link_to 'Delete', training_path(training), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
     
         <% end %>
         </tbody>

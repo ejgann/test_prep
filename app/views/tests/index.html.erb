@@ -14,7 +14,8 @@
         <tbody>
             <tr>
             <td><%= test.name  %></td>
-            <td><%= test.date_of_test  %></td>
+            <td><%= test.date.strftime("%b %e, %Y") %></td>
+            <td><%= link_to 'Show', test_path(test) %></td>
             <td><%= link_to 'Edit', edit_test_path(test) %></td>
             <td><%= link_to 'Delete', test_path(test), method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
