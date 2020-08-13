@@ -2,10 +2,11 @@
 
 <br></br>
 <div class="col-md-3">
-    <table class="table table-striped">
+    <table class="table">
         <thead>
             <tr>
             <th scope="col">Name</th>
+            <th scope="col">Date of Test</th>
             </tr>
         </thead>
 
@@ -13,6 +14,7 @@
         <tbody>
             <tr>
             <td><%= test.name  %></td>
+            <td><%= test.date_of_test  %></td>
             <td><%= link_to 'Edit', edit_test_path(test) %></td>
             <td><%= link_to 'Delete', test_path(test), method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>

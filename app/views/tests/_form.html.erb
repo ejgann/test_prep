@@ -1,7 +1,13 @@
 <%= form_for @test do |f| %>
 
   <%= f.label :name, "Test Name" %>
-  <%= f.text_field :name %>
+  <%= f.select :name, options_for_select(["GRE - Graduate Record Exam", "GMAT - Graduate Management Admission Test", "LSAT - Law School Admissions Test", "MCAT - Medical College Admissions Test", "TOEFL - Test of English as a Foreign Language"]), include_blank: true %>
+
+  <br></br>
+
+  <%= f.label :date_of_test, "Test Date" %>
+  <%= f.date_field :date_of_test %>
+
   <br></br>
 
   <%= f.submit%>

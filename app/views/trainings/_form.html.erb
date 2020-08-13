@@ -8,6 +8,11 @@
     <%= f.date_field :date %>
     
     <br></br>
+
+    <%= f.label :rating %>
+    <%= f.number_field :rating, max: 5 %>
+
+    <br></br>
     
     <%= f.label :notes %>
     <%= f.text_area :notes %>
