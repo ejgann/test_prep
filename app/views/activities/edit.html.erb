@@ -1,3 +1,5 @@
 <h1>Edit <%= @activity.name %></h1>
 
+<%= render partial: "layouts/errors", locals: { object: @activity } %>
+
 <%= render 'form' %>
