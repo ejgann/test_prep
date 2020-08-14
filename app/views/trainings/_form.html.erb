@@ -20,7 +20,7 @@
     <br></br>
 
     <%= f.label :activity_id %>
-    <%= f.collection_select :activity_id, current_user.activities, :id, :name %>
+    <%= f.collection_select :activity_id, Activity.all, :id, :name %>
 
     <br></br>
 

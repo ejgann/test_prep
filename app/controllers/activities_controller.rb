@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
 
     def index
-        @activities = current_user.activities.most_popular
+        @activities = Activity.most_popular
     end
 
     def new
@@ -43,6 +43,6 @@ class ActivitiesController < ApplicationController
     private
 
     def activity_params
-        params.require(:activity).permit(:name, :time_required, :user_id)
+        params.require(:activity).permit(:name, :time_required, :user_id, :training_parameters[:name, :time_required, :user_id])
     end
 end
