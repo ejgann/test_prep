@@ -2,9 +2,11 @@ class TrainingsController < ApplicationController
     def index
          #    if the training is nested/associated with an activity, then trainings set equal to activity.trainings
         if params[:activity_id] && @activity = Activity.find_by_id(params[:activity_id])
-            @trainings = @activity.trainings
-        elsif params[:test_id] && @test = Test.find_by_id(params[:test_id])
-            @trainings = @test.trainings
+            # @trainings = @activity.trainings
+            @trainings = current_user.trainings.by_activity(params[:activity_id])
+        # elsif params[:test_id] && @test = Test.find_by_id(params[:test_id])
+        # @trainings = current_user.trainings.by_test(params[:test_id])
+            # @trainings = @test.trainings
         else
             @trainings = Training.all
         end
@@ -12,7 +14,8 @@ class TrainingsController < ApplicationController
 
     def new
         if params[:actvity_id] && @activity = Activity.find_by_id(params[:activity_id])
-            @training = @activity.trainings.build
+            @training = @activity.trainings.build   
+            # has_many
         else
         @training = Training.new
         @training.build_activity
@@ -23,8 +26,8 @@ class TrainingsController < ApplicationController
     def create
         if params[:activity_id] && @activity = Activity.find_by_id(params[:activity_id])
             @training = @activity.trainings.build(training_params)
-        elsif params[:test_id] && @testing = Test.find_by_id(params[:test_id])
-            @training = @test.trainings.build(training_params)
+        # elsif params[:test_id] && @testing = Test.find_by_id(params[:test_id])
+        #     @training = @test.trainings.build(training_params)
         else 
             @training = Training.new(training_params)
         end
@@ -62,7 +65,7 @@ class TrainingsController < ApplicationController
     private
 
     def training_params
-        params.require(:training).permit(:date, :rating, :notes, :user_id, :test_id, :activity_id)
+        params.require(:training).permit(:date, :rating, :notes, :test_id, :activity_id)
     end
 
 end

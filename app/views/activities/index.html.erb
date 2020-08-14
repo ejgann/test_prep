@@ -1,4 +1,4 @@
-<h1>All Test Prep Activities</h1>
+<h1>All of <%= current_user.username%>'s Test Prep Activities</h1>
 
 <br></br>
 <div class="col-md-3">
@@ -11,7 +11,7 @@
             </tr>
         </thead>
 
-    <% @activities.each do |activity| %>
+    <% current_user.activities.each do |activity| %>
 
     <tr>
     <td><%= activity.name %></td>

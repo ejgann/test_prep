@@ -2,8 +2,9 @@ class Activity < ApplicationRecord
   belongs_to :user
   has_many :trainings
   has_many :tests, through: :trainings
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :time_required, numericality: {only_integer: true}
+
 
   # scope method
   scope :most_popular, -> { Activity.left_outer_joins(:trainings).group(:id).order("count(trainings.activity_id) desc") }

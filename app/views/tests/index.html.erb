@@ -1,4 +1,4 @@
-<h1>All Tests</h1>
+<h1>All of <%= current_user.username%>'s Tests</h1>
 
 <br></br>
 <div class="col-md-3">
@@ -10,7 +10,7 @@
             </tr>
         </thead>
 
-        <% @tests.each do |test| %>
+        <% current_user.tests.each do |test| %>
         <tbody>
             <tr>
             <td><%= test.name  %></td>

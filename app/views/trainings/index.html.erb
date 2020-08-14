@@ -1,36 +1,15 @@
-<h1>All Test Training Sessions</h1>
+<h1><%= current_user.username %>'s Training Log</h1>
 
 <br></br>
-<div class="col-md-3">
-    <table class="table">
-        <thead>
-            <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Rating (1=poor, 5=great)</th>
-            <th scope="col">Notes</th>
-            <th scope="col">Prep Activity</th>
-            <th scope="col">Test</th>
-            </tr>
-        </thead>
-
-        <% @trainings.each do |training| %>
-        <tbody>
-            <tr>
-            <td><%= training.date.strftime("%b %e, %Y")  %></td>
-            <td><%= training.rating  %></td>
-            <td><%= training.notes  %></td>
-            <td><%= training.activity.name  %></td>
-            <td><%= training.test.name  %></td>
-            <td><%= link_to 'Show', training_path(training) %></td>
-            <td><%= link_to 'Edit', edit_training_path(training) %></td>
-            <td><%= link_to 'Delete', training_path(training), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-    
-        <% end %>
-        </tbody>
-    </table>
-</div>
-
+<ul>
+<% @trainings.each do |t| %>
+  <li>
+    <%= current_user.username %> completed a  
+    <%= link_to t.activity.name, activity_path(t.activity)%> session in preparation for the <%= link_to t.test.name, test_path(t.test)%> on 
+    <%= t.date.strftime("%b %e, %Y") %>. 
+    <strong>Personal Notes: </strong><%= t.notes %>
+<% end %>
+</ul>
 <br></br>
 
 <%= link_to 'Add a New Training Session', new_training_path %>

@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
 
     def index
-        @activities = Activity.most_popular
+        @activities = current_user.activities.most_popular
     end
 
     def new
