@@ -1,8 +1,0 @@
-<h1>Training Date: <%= @training.date.strftime("%b %e, %Y") %></h1>
-
-<h3>Rating: </h3><%= @training.rating %>
-<h3>Notes: </h3><%= @training.notes %>
-<h3>Prep Activity: </h3><%= @training.activity.name %>
-<h3>Test: </h3><%= @training.test.name %>
-<br></br>
-<%= link_to 'All Trainings', trainings_path %>

@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
 
     def index
-        @activities = Activity.most_popular
+        @activities = Activity.all
     end
 
     def new
@@ -9,6 +9,8 @@ class ActivitiesController < ApplicationController
     end
 
     def create
+byebug
+
         @activity = current_user.activities.build(activity_params)
         if @activity.save
             redirect_to activities_path
