@@ -1,0 +1,14 @@
+<%= form_for @study_session do |f| %>
+
+    <%= f.label :date %>
+    <%= f.datefield :date %>
+    <br></br>
+    <%= f.label :rating %>
+    <%= f.number_field :rating, min: 0, max: 5 %>
+    <br></br>
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
+    <br></br>
+    <%= f.submit%>
+
+<% end %>
