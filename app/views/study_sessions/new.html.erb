@@ -1,5 +1,7 @@
 <h2>Record a New Study Session</h2>
 <br></br>
-<%= render partial: "layouts/errors", locals: { object: @activity } %>
+<%= render partial: "layouts/errors", locals: { object: @study_session } %>
 
 <% render 'form' %>
+<br></br>
+<%= link_to 'Cancel', user_study_sessions_path(current_user) %>
