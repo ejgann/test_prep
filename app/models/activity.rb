@@ -1,7 +1,7 @@
 class Activity < ApplicationRecord
-  belongs_to :user
-  has_many :trainings
-  has_many :tests, through: :trainings
+  has_many :study_sessions
+  has_many :users, through: :study_sessions
+  
   validates :name, presence: true
   validates :time_required, numericality: {only_integer: true}
 

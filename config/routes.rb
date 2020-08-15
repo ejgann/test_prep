@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :study_sessions
   get '/auth/:provider/callback' => 'sessions#omniauth'
   # if want multiple omniauth providers, leave as :provider. Otherwise, specify google, etc
   

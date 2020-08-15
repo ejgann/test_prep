@@ -1,7 +1,9 @@
 class User < ApplicationRecord
     has_secure_password
     has_many :tests
-    has_many :activities
+    has_many :study_sessions
+    has_many :activities, through: :study_sessions
+    
     validates :username, :email, presence: true
     validates :username, uniqueness: true
 
