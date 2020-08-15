@@ -12,13 +12,12 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   
-  resources :trainings
-  resources :tests do
-    resources :trainings
+  resources :tests
+  resources :activities
+  resources :study_sessions
+  resources :users do
+    resources :tests, shallow: true
+    resources :study_sessions, shallow: true
     end
-  resources :activities do
-    resources :trainings
-    end
-  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
