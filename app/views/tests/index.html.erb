@@ -1,0 +1,12 @@
+<h2>All of <%= current_user.username%>'s Tests</h2>
+<br></br>
+<% current_user.tests.each do |test| %>
+    <ul>
+    <li><%= test.name %>
+    <br></br>
+    <%= test.date %></li>
+
+<% end %>
+</ul>
+
+<%= link_to 'Add a New Test', new_user_test_path(current_user) %>

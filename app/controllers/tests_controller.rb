@@ -1,10 +1,10 @@
 class TestsController < ApplicationController
     def index
-        @tests = Tests.all
+        @tests = current_user.tests.all
     end
 
     def new
-        @test = current_user.test.new
+        @test = current_user.tests.new
     end
 
     def create
