@@ -1,0 +1,10 @@
+<h2>Practice Session Details</h2>
+
+<% current_user.practice.each do |practice| %>
+    <%= practice.date %>
+    <br></br>
+    <%= practice.rating %> (1=poor, 5=great)
+    <br></br>
+    <%= practice.comments %>
+
+    <% end %>

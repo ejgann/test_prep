@@ -1,4 +1,4 @@
-class StudySession < ApplicationRecord
+class Practice < ApplicationRecord
   belongs_to :user
   belongs_to :activity
 end

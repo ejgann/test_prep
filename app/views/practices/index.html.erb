@@ -1,0 +1,13 @@
+<h2><%= current_user.username%>'s Practice Log</h2>
+
+<ul>
+<% current_user.practices.each do |s| %>
+<li><%= s.date %>
+<%= s.rating %> (1=poor, 5=great)
+<%= s.comments %>
+<%= s.activity.name %>
+</li>
+<% end %>
+</ul>
+
+<%= link_to 'Record a Practice Session', new_user_practice_path(current_user) %>

@@ -1,2 +1,2 @@
-module StudySessionsHelper
+module PracticesHelper
 end

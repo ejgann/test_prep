@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :study_sessions
   get '/auth/:provider/callback' => 'sessions#omniauth'
   # if want multiple omniauth providers, leave as :provider. Otherwise, specify google, etc
   
@@ -14,10 +13,10 @@ Rails.application.routes.draw do
   
   resources :tests
   resources :activities
-  resources :study_sessions
+  resources :practices
   resources :users do
     resources :tests, shallow: true
-    resources :study_sessions, shallow: true
+    resources :practices, shallow: true
     end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

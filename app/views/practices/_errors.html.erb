@@ -1,0 +1,11 @@
+<% if @practice.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@practice.errors.count, "error") %> prohibited this form from being saved:</h2>
+
+        <ul>
+        <% @practice.errors.full_messages.each do |m| %>
+        <li><%= m %> </li>
+    <% end %>
+        </ul>
+        </div>
+<% end %>

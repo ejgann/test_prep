@@ -1,0 +1,7 @@
+<h2>Record a New Practice Session</h2>
+<br></br>
+<%= render partial: "errors", locals: { object: @practice } %>
+
+<% render 'form' %>
+<br></br>
+<%= link_to 'Cancel', user_practices_path(@user) %>

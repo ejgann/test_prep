@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_15_160512) do
+ActiveRecord::Schema.define(version: 2020_08_16_142028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_08_15_160512) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "study_sessions", force: :cascade do |t|
+  create_table "practices", force: :cascade do |t|
     t.datetime "date"
     t.integer "rating"
     t.string "comment"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2020_08_15_160512) do
     t.bigint "activity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["activity_id"], name: "index_study_sessions_on_activity_id"
-    t.index ["user_id"], name: "index_study_sessions_on_user_id"
+    t.index ["activity_id"], name: "index_practices_on_activity_id"
+    t.index ["user_id"], name: "index_practices_on_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_08_15_160512) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "study_sessions", "activities"
-  add_foreign_key "study_sessions", "users"
+  add_foreign_key "practices", "activities"
+  add_foreign_key "practices", "users"
   add_foreign_key "tests", "users"
 end
