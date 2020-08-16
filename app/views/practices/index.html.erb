@@ -20,6 +20,8 @@
         <td><%= practice.rating %></td>
         <td><%= practice.comment %></td>
         <td><%= practice.activity.name %></td>
+        <td><%= link_to 'Show', practices_path(practice) %></td>
+        <td><%= link_to 'Delete', practices_path(practice), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
     <% end %>
     </tbody>
