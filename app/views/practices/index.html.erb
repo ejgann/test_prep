@@ -1,11 +1,11 @@
 <h2><%= current_user.username%>'s Practice Log</h2>
 
 <ul>
-<% current_user.practices.each do |s| %>
-<li><%= s.date %>
-<%= s.rating %> (1=poor, 5=great)
-<%= s.comments %>
-<%= s.activity.name %>
+<% current_user.practices.each do |practice| %>
+<li><%= practice.date %>
+<%= practice.rating %> (1=poor, 5=great)
+<%= practice.comment %>
+<%= practice.activity.name %>
 </li>
 <% end %>
 </ul>
