@@ -13,7 +13,14 @@
  *= require_tree .
  *= require_self
  */
-  .box-shadow {
+  
+ .field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+ }
+
+ .box-shadow {
     box-shadow: 7px 7px 7px gray;
   }
 

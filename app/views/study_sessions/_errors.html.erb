@@ -1,0 +1,11 @@
+<% if @study_session.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@study_session.errors.count, "error") %> prohibited this form from being saved:</h2>
+
+        <ul>
+        <% @study_session.errors.full_messages.each do |m| %>
+        <li><%= m %> </li>
+    <% end %>
+        </ul>
+        </div>
+<% end %>
