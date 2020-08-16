@@ -8,7 +8,6 @@
             <th scope="col">Name</th>
             <th scope="col">Time Required</th>
             <th scope="col">Number Completed</th>
-            <th scope="col">Added By</th>
             </tr>
         </thead>
         <tbody>
@@ -17,8 +16,7 @@
         <tr>
         <td><%= activity.name %></td>
         <td><%= activity.time_required %> hours</td>
-        <td><%= activity.trainings.count %></td>
-        <td><%= activity.user.username %>
+        <td><%= activity.practices.count %></td>
         </tr>
         
         <% end %>

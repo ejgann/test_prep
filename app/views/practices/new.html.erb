@@ -2,6 +2,6 @@
 <br></br>
 <%= render partial: "errors", locals: { object: @practice } %>
 
-<% render 'form' %>
+<%= render 'form' %>
 <br></br>
-<%= link_to 'Cancel', user_practices_path(@user) %>
+<%= link_to 'Cancel', user_practices_path(:user_id) %>
