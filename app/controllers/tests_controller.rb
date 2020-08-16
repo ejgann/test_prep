@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+    
     def index
         @tests = current_user.tests.all
     end
@@ -23,3 +24,4 @@ class TestsController < ApplicationController
     end
 
 end
+

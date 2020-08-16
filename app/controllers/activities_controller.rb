@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+    before_action :set_activity, only: [:show, :edit, :update]
 
     def index
         @activities = Activity.all
@@ -18,15 +19,12 @@ class ActivitiesController < ApplicationController
     end
 
     def show
-        @activity = Activity.find_by(id: params[:id])
     end
 
     def edit
-        @activity = Activity.find_by(id: params[:id])
     end
     
     def update
-        @activity = Activity.find_by(id: params[:id])
         if @activity.update(activity_params)
             redirect_to activity_path(@activity)
         else
@@ -44,5 +42,13 @@ class ActivitiesController < ApplicationController
 
     def activity_params
         params.require(:activity).permit(:name, :time_required, :user_id)
+    end
+
+    def set_activity
+        @activity = Activity.find_by(id: params[:id])
+        if !activity
+            flash[:message] = "Activity was not found"
+            redirect_to activities_path
+        end
     end
 end
