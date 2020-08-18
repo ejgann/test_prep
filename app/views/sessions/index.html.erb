@@ -1,0 +1,43 @@
+<h1>Test Prep Tracker</h1>
+
+<% if !logged_in? %>
+
+
+    <div class="card bg-light text-dark box-shadow">
+            <div class="card-body">
+            <img class="landing_pic"<%= image_tag "pencils_2.jpg", class: "fit-image" %>
+            </div>
+   </div>
+
+<% else %>
+
+    <div class="card-deck">
+        <div class="card bg-light text-dark box-shadow">
+            <div class="card-body">
+            <img class="card-img-top"<%= image_tag "pencils.jpg", class: "fit-image" %>
+            <h4 class="card-title"><%=link_to 'Tests', tests_path%></h4>
+            <p class="card-text">A list of tests for which you're preparing</p>
+            </div>
+        </div>
+
+        <div class="card bg-light text-dark box-shadow">
+            <div class="card-body">
+            <img class="card-img-top"<%= image_tag "books.jpg", class: "fit-image" %>
+            <h4 class="card-title"><%=link_to 'Test Prep Activities', activities_path%></h4>
+            <p class="card-text">Activities to help you prepare for your tests</p>
+            </div>
+        </div>
+
+        <div class="card bg-light text-dark box-shadow">
+            <div class="card-body">
+            <img class="card-img-top"<%= image_tag "training.jpg", class: "fit-image" %>
+            <h4 class="card-title"><%=link_to 'Practice Log', practices_path%></h4>
+            <p class="card-text">Track your study time and progress</p>
+            </div>
+        </div>
+
+
+    </div>
+
+<% end %>
+

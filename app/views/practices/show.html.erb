@@ -1,0 +1,13 @@
+<h2>Practice Session Details</h2>
+<br></br>
+<% current_user.practices.each do |practice| %>
+    <h4>Date of Practice: </h4><%= practice.date.strftime("%A, %b %e, %Y") %>
+    <br></br>
+    <h4>Rating:  </h4><%= practice.rating %> (1=poor, 5=great)
+    <br></br>
+    <h4>Comments:  </h4><%= practice.comment %>
+
+    <% end %>
+
+    <br></br>
+    <%= link_to 'Practice Log', user_practices_path(current_user) %>

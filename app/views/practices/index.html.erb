@@ -1,0 +1,35 @@
+<h2><%= current_user.username%>'s Practice Log</h2>
+
+<br></br>
+
+<div class="col-md-9">
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Rating (1=poor, 5=great)</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Associated Activity</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% current_user.practices.each do |practice| %>
+        <tr>
+        <td><%= practice.date.strftime("%A, %b %e, %Y") %></td>
+        <td><%= practice.rating %></td>
+        <td><%= practice.comment %></td>
+        <td><%= practice.activity.name %></td>
+        <td><%= link_to 'Show', practice_path(practice) %></td>
+        <td><%= link_to 'Edit', edit_practice_path(practice) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+</div>
+
+<br></br>
+
+<%= link_to 'Record a Practice Session', new_user_practice_path(current_user) %>
+
+

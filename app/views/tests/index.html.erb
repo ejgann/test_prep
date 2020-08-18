@@ -1,0 +1,26 @@
+<h2>All of <%= current_user.username%>'s Tests</h2>
+
+<br></br>
+<div class="col-md-6">
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Date of Test</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% current_user.tests.each do |test| %>
+            <tr>
+            <td><%= test.name %></td>
+            <td><%= test.date.strftime("%A, %b %e, %Y") %></td>
+            </tr>
+
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<br></br>
+
+<%= link_to 'Add a New Test', new_user_test_path(current_user) %>

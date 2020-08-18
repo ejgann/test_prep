@@ -1,0 +1,30 @@
+<h1>Test Prep Activities</h1>
+
+<br></br>
+<div class="col-md-9">
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Time Required</th>
+            <th scope="col">Description</th>
+            <th scope="col">Other Users' Favorites</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @activities.each do |activity| %>
+
+        <tr>
+        <td><%= activity.name %></td>
+        <td><%= activity.time_required %> hours</td>
+        <td><%= activity.description %></td>
+        <td><%= activity.practices.count %></td>
+        </tr>
+        
+        <% end %>
+        </tbody>
+    </table>
+</div>
+
+<br></br>
+<%= link_to 'Add a New Activity', new_activity_path %>

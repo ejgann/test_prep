@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+  
+.landing_pic {
+  max-width: 100%;
+  height: auto;
+}
+
+ .field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+ }
+
+ .box-shadow {
+    box-shadow: 7px 7px 7px gray;
+  }
+
+  body {
+    font-family: "Helvetica Neue", sans-serif;
+    padding: 100px;
+    font-size: 16px;
+    background-color: rgb(233, 238, 247);
+  }
+
+  .fit-image {
+    height: 100%;
+    width: 100%;  
+  }
+
+  .show_info {
+    padding: 0 25px;
+  }
+
+  a.button {
+
+    color: #444;
+    display: block;
+    float: left;
+    font: normal 12px arial, sans-serif;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; /* sliding doors padding */
+    text-decoration: none;
+    border: black;
+  }

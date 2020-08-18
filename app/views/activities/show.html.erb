@@ -1,0 +1,8 @@
+<h1><%= @activity.name %></h1>
+<br></br>
+<h4>Time Required: </h4><%= @activity.time_required %> (in hours)
+<h4>Description: </h4><%= @activity.description %>
+<h4>Completed Trainings: </h4><%=@activity.trainings.count %>
+<br></br>
+<%= link_to 'Record this Activity', new_activity_training_path(@activity)%>     |     
+<%= link_to 'All Activities', activities_path %>
