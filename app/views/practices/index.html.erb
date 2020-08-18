@@ -2,7 +2,7 @@
 
 <br></br>
 
-<div class="col-md-3">
+<div class="col-md-9">
 <table class="table">
     <thead>
         <tr>
@@ -21,6 +21,7 @@
         <td><%= practice.comment %></td>
         <td><%= practice.activity.name %></td>
         <td><%= link_to 'Show', practices_path(practice) %></td>
+        <td><%= link_to 'Edit', edit_practice_path(practice) %></td>
         </tr>
     <% end %>
     </tbody>
