@@ -1,7 +1,7 @@
 <%= form_for @activity do |f| %>
 
   <%= f.label :name, "Activity Name" %>
-  <%= f.select :name, options_for_select(["Flash Cards", "Prep Course", "Tutoring", "Study Guide", "Group Study"]), include_blank: true %>
+  <%= f.text_field :name %>
   <br></br>
 
   <%= f.label :time_required %>
