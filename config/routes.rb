@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   
   resources :tests
   resources :activities do
-    resources :practices, only: [:index, :new, :create]
+    resources :practices, only: [:index, :new, :create, :show]
     end
   resources :practices
   resources :users do

@@ -20,11 +20,11 @@ Test.create(name: "MCAT", date: 2020/11/10, user_id: 3)
 
 
 # activities
-Activity.create(name: "Flash Cards", time_required: 1)
-Activity.create(name: "Study Group", time_required: 2)
-Activity.create(name: "Prep Course", time_required: 3)
-Activity.create(name: "Tutoring", time_required: 2)
-Activity.create(name: "Prep Book", time_required: 3)
+Activity.create(name: "Flash Cards", time_required: 1, description: "Helps with memorization and association")
+Activity.create(name: "Study Group", time_required: 2, description: "Collective study session with peers")
+Activity.create(name: "Prep Course", time_required: 3, description: "Course offered by an organization that is focused on helping students prep for a specific test (i.e. Princeton Review courses)")
+Activity.create(name: "Tutoring", time_required: 2, description: "One-on-one help from an experienced tutor")
+Activity.create(name: "Prep Book", time_required: 3, description: "A book printed by organizations, such as the Princeton Review, to aid in test prep")
 
 # practices
 
