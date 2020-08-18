@@ -4,4 +4,6 @@ class Practice < ApplicationRecord
 
   validates :date, presence: true
   validates :comment, presence: true
+  validates :rating, numericality: {only_integer: true}
+
 end
