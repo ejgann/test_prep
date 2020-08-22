@@ -15,7 +15,6 @@ class PracticesController < ApplicationController
         else
             @practice = Practice.new
         end
-        @practice.build_activity
     end
 
     def create
