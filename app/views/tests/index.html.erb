@@ -1,6 +1,15 @@
 <h2>All of <%= current_user.username%>'s Tests</h2>
 
 <br></br>
+    <h5>Search by Name</h5>
+        <%= form_tag tests_path, :method => "get" do %>
+        <%= label_tag(:search, "Search by Name") %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag("Search", :name => nil) %>
+        <% end %>
+
+<br></br>
+
 <div class="col-md-6">
     <table class="table">
         <thead>
@@ -16,7 +25,6 @@
             <td><%= test.name %></td>
             <td><%= test.date.strftime("%A, %b %e, %Y") %></td>
             </tr>
-
             <% end %>
         </tbody>
     </table>

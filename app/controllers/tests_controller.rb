@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
     
     def index
-        @tests = current_user.tests.all
+        @tests = Test.search(params[:search])
     end
 
     def new
@@ -20,7 +20,7 @@ class TestsController < ApplicationController
     private
 
     def test_params
-        params.require(:test).permit(:name, :date, :user_id)
+        params.require(:test).permit(:name, :date, :user_id, :search)
     end
 
 end
