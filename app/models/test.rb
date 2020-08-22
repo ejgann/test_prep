@@ -6,17 +6,28 @@ class Test < ApplicationRecord
 
   # scope :countdown, where("date > ?", (@test.date) - (Date.today).to_i)
 
-  def self.search(search)
-    if search
-      test_name = Test.find_by(name: search)
-      if test_name
-        self.where(test_id: test_name)
-      else
-        @tests= Test.all
-      end
-    else
-      @tests = Test.all
-    end
-  end
+  scope :name_search, -> { where('name > ?', "%#{search}%") }
+  
+
+  # def self.search(search)
+  #   if search.present?
+  #     @tests = Test.where('name LIKE ?', "%#{search}%")
+  #   else
+  #     @tests = Test.all
+  #   end
+  # end
+
+  # def self.search(search)
+  #   if search
+  #     test_name = Test.find_by(name: search)
+  #     if test_name
+  #       self.where('name LIKE ?', "%#{search}%")
+  #     else
+  #       @tests = Test.all
+  #     end
+  #   else
+  #     @tests = Test.all
+  #   end
+  # end
 
 end

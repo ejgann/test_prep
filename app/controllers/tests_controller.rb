@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
     
     def index
-        @tests = Test.search(params[:search])
+        @tests = current_user.tests.name_search
     end
 
     def new
