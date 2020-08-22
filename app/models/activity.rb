@@ -6,7 +6,7 @@ class Activity < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :time_required, numericality: true
 
-  scope :order_by_popularity, -> { Activity.left_joins(:practices).group(:id).order("count(practices.activity_id) desc") }
+  scope :order_by_popularity, -> { left_joins(:practices).group(:id).order("count(practices.activity_id) desc") }
   #order by how many associated practice sessions
 
 end
