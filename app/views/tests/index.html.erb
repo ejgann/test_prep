@@ -10,7 +10,7 @@
         <br></br>
     <ul>
     <% if params[:search] %>
-        <% @tests.each do |t| %>
+        <% current_user.tests.where('(name) ILIKE ?', "%#{params[:search]}%").each do |t| %>
         <li><%= t.name %></li>
     <% end %>
     <% end %>
