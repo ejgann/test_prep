@@ -8,9 +8,9 @@ class Test < ApplicationRecord
 
   # scope :search, -> (search) { where('name ILIKE > ?', "%#{search}%") }
 
-    def self.search(params)
-      where("LOWER(name) LIKE ?", "%#{params}%")
-    end
+    # def self.search(params)
+    #   where("LOWER(name) ILIKE ?", "%#{params}%")
+    # end
     # select any tests with a name that is an exact match to the search term
 
 
