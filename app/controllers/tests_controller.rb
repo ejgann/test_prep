@@ -1,7 +1,11 @@
 class TestsController < ApplicationController
     
     def index
-        @tests = current_user.tests.all
+        # if params[:search] && !params[:search].empty? 
+        # @tests = @tests.search(params[:search].downcase)
+        if params[:search]
+            @tests = Test.where('(name) ILIKE ?', "%#{params[:search]}%")
+        end
     end
 
     def new
@@ -20,7 +24,7 @@ class TestsController < ApplicationController
     private
 
     def test_params
-        params.require(:test).permit(:name, :date, :user_id)
+        params.require(:test).permit(:name, :date, :user_id, :search)
     end
 
 end
