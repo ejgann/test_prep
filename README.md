@@ -1,29 +1,21 @@
-# Test Prep Tracker
-An app to help users log and track their progress in preparing for graduate or professional exams.
+<h1 align="center">:books: Test Prep Tracker :pencil2:</h1>
+<p align="center">An app to help users log and track their progress in preparing for graduate or professional exams.<br>
+Check out the <a href="https://vimeo.com/509897295)">demo</a>.
+</p>
 
-[Demo](https://vimeo.com/509897295)
-
-
-
-
-
-
-## Architecture and models
+## Features
 There are four models on which this app is based: Users, Tests, Activities, and Practices. Tests belong_to Users; Users have many Activities through Practices; and Activities have many Users through Practices.
 
-## Technologies
-Test Prep Tracker is created with:
-
-* Ruby version: 2.6.1
-* Rails version: 6.0.3
-* PostgreSQL version: 0.18, 0.20
+## Built With:
+* Ruby v2.6.1
+* Rails v6.0.3 - MVC Web Framework
+* PostgreSQL v0.18, 0.20 - Database
 * OmniAuth Google
 * Bootstrap 4.0.0
 
 ## Features
-* Maintain a list of graduate/professional tests for which you are preparing
-* Log practice sessions of pre-set study activities or add your own activity
+* Sign in/Sign up option with email or Google account authentication
+* User can view and add to a list of graduate/professional tests for which they are preparing; includes search feature for finding specific tests
+* User can view suggested test prep activities that other users have added, including descriptions and suggested time requirements, or add their own test prep activity
+* Log practice sessions of study activities
 * Track progress and performance until the test day
-
-## Project Status
-This project is a work in progress and will continue to be improved over time. Currently it is in a functional state for purposes of submitting for a school project.
