@@ -11,7 +11,6 @@ Check out the <a href="https://vimeo.com/509897295)">demo</a>.
 * Bootstrap 4.0.0
 
 ## Features
-![gif title](app/test_prep.gif)
 
 * Sign in/Sign up option with email or Google account authentication
 * User can view and add to a list of graduate/professional tests for which they are preparing; includes search feature for finding specific tests
