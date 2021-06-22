@@ -14,6 +14,8 @@ There are four models on which this app is based: Users, Tests, Activities, and 
 * Bootstrap 4.0.0
 
 ## Features
+![gif title](https://github.com/ejgann/test_prep/find/master?raw=true)
+
 * Sign in/Sign up option with email or Google account authentication
 * User can view and add to a list of graduate/professional tests for which they are preparing; includes search feature for finding specific tests
 * User can view suggested test prep activities that other users have added, including descriptions and suggested time requirements, or add their own test prep activity
