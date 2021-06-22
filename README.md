@@ -1,15 +1,12 @@
-# README for Test Prep Tracker
+# Test Prep Tracker
+An app to help users log and track their progress in preparing for graduate or professional exams.
 
-* TestPrep [Demo](https://vimeo.com/509897295)
+[Demo](https://vimeo.com/509897295)
 
-* System dependencies
 
-* Configuration
 
-* Database creation: PostgreSql Test and Development
 
-## What's it about?
-The Test Prep Tracker app allows users who are studying for graduate or professional exams to record the activities and practice sessions they complete in preparation for their exam.
+
 
 ## Architecture and models
 There are four models on which this app is based: Users, Tests, Activities, and Practices. Tests belong_to Users; Users have many Activities through Practices; and Activities have many Users through Practices.
