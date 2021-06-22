@@ -3,9 +3,6 @@
 Check out the <a href="https://vimeo.com/509897295)">demo</a>.
 </p>
 
-## Features
-There are four models on which this app is based: Users, Tests, Activities, and Practices. Tests belong_to Users; Users have many Activities through Practices; and Activities have many Users through Practices.
-
 ## Built With:
 * Ruby v2.6.1
 * Rails v6.0.3 - MVC Web Framework
@@ -14,7 +11,7 @@ There are four models on which this app is based: Users, Tests, Activities, and 
 * Bootstrap 4.0.0
 
 ## Features
-![gif title](https://github.com/ejgann/test_prep/find/master)
+![gif title](app/test_prep.gif?raw=true)
 
 * Sign in/Sign up option with email or Google account authentication
 * User can view and add to a list of graduate/professional tests for which they are preparing; includes search feature for finding specific tests
